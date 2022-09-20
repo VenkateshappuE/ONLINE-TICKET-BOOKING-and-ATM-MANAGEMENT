@@ -1,115 +1,123 @@
-{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Consolas;}{\f1\fnil\fcharset0 Calibri;}}
-{\colortbl ;\red0\green0\blue0;\red255\green255\blue255;\red17\green102\blue68;\red51\green0\blue170;\red36\green36\blue36;\red42\green0\blue255;\red127\green0\blue85;\red0\green0\blue255;\red255\green23\blue23;\red63\green127\blue95;\red255\green0\blue0;}
-{\*\generator Riched20 10.0.10240}\viewkind4\uc1 
-\pard\sl240\slmult1\cf1\highlight2\f0\fs21\lang9 x=\cf3 10\par
-\cf1 Booked_seat=\cf3 0\par
-\cf1 prize_of_ticket=\cf3 0\par
-\cf1 Total_amount=\cf3 0\cf4 print\cf5 (\cf6 "WELCOME TO AGS CINEMA"\cf5 )\par
-\cf1 movie_name=\cf4 input\cf5 (\cf6 "please enter the movie name (ps1/VAADIVASAL):"\cf5 )\par
-\cf1 date=\cf4 input\cf5 (\cf6 "enter your booking date (dd/mm/yyyy):"\cf5 )\par
-\cf7\b if\cf5\b0  \cf1 movie_name==\cf6 "ps1"\cf5  \cf7\b and\cf5\b0  \cf1 date==\cf6 "27/09/2022"\cf5 :\par
-    \cf4 print\cf5 (\cf6 "your ticket is booked"\cf5 )\par
-\cf7\b elif\cf5\b0  \cf1 movie_name==\cf6 "ps1"\cf5  \cf7\b and\cf5\b0  \cf1 date==\cf6 "28/09/2022"\cf5 :\par
-    \cf4 print\cf5 (\cf6 "your ticket not booked"\cf5 )\par
-\cf7\b elif\cf5\b0  \cf1 movie_name==\cf6 "VAADIVASAL"\cf5  \cf7\b and\cf5\b0  \cf1 date==\cf6 "20/09/2022"\cf5 :\par
-    \cf4 print\cf5 (\cf6 "your ticket will be ready"\cf5 )\par
-\cf7\b elif\cf5\b0  \cf1 movie_name==\cf6 "VAADIVASAL"\cf5  \cf7\b and\cf5\b0  \cf1 date==\cf6 "21/09/2022"\cf5 :\par
-    \cf4 print\cf5 (\cf6 "your ticket is waiting list"\cf5 )\par
-\cf7\b else\cf5\b0 :\par
-    \cf4 print\cf5 (\cf6 "sorry your ticket not booked"\cf5 )\par
-\cf1 Row=\cf4 int\cf5 (\cf4 input\cf5 (\cf6 "Enter row number:"\cf5 ))\par
-\cf1 seats=\cf4 int\cf5 (\cf4 input\cf5 (\cf6 "Enter number of seats in a Row"\cf5 ))\par
-\cf1 Total_seat=\cf5  \cf3 100\cf1 Booked_ticket_person=\cf5 [\cf4 str\cf5 (\cf1 Row\cf5 )\cf1 +\cf4 str\cf5 (\cf1 j\cf5 ) \cf7\b for\cf5\b0  \cf1 j\cf5  \cf7\b in\cf5\b0  \cf4 range\cf5 (\cf1 seats\cf5 )]\par
-\cf4 print\cf5 (\cf6 'Tickets: '\cf5 , \cf1 Booked_ticket_person\cf5 )\par
-\cf1 Booked_seat\cf5  \cf1 =\cf5  \cf4 len\cf5 (\cf1 Booked_ticket_person\cf5 )\par
-\cf7\b class\cf5\b0  \cf8 chart\cf5 :\par
-    \cf9 @staticmethod\cf5     \cf7\b def\cf5\b0  \cf8 chart_makerr\cf5 (\cf1 Row=\cf3 0\cf5 , \cf1 seats=\cf3 1\cf5 ):\par
-        \cf1 seats_chart=\cf5\{\}\par
-        \cf7\b for\cf5\b0  \cf1 i\cf5  \cf7\b in\cf5\b0  \cf4 range\cf5 (\cf1 Row\cf5 ):\par
-            \cf1 seats_in_row=\cf5\{\}\par
-            \cf7\b for\cf5\b0  \cf1 j\cf5  \cf7\b in\cf5\b0  \cf4 range\cf5 (\cf1 seats\cf5 ):\par
-                \cf1 seats_in_row\cf5 [\cf4 str\cf5 (\cf1 j+\cf3 1\cf5 )]\cf1 =\cf6 'S'\cf5             \cf1 seats_chart\cf5 [\cf4 str\cf5 (\cf1 i\cf5 )]\cf1 =\cf5  \cf1 seats_in_row\cf5         \cf7\b return\cf5\b0  \cf1 seats_chart\cf5     \par
-\cf9 @staticmethod\cf5     \cf7\b def\cf5\b0  \cf8 find_percentage\cf5 (\cf1 Booked_seat=\cf3 0\cf5 , \cf1 Total_seat=\cf3 100\cf5 ):\par
-        \cf1 percentage=\cf5 (\cf1 Booked_seat/Total_seat\cf5 )\cf1 *\cf3 100\cf5        \par
- \cf7\b return\cf5\b0  \cf1 percentageclass_call\cf5  \cf1 =\cf5  \cf1 charttable_of_chart\cf5  \cf1 =\cf5  \cf1 class_call\cf5 .\cf1 chart_maker\cf5 ()\par
-\cf4 print\cf5 (\cf6 '1 for show the seats \\n2 for buy a ticket \\n3 for statistics\\n4 for show booked ticket user info \\n0 for exit'\cf5 )\par
-\cf1 x=\cf4 int\cf5 (\cf4 input\cf5 (\cf6 'select option:'\cf5 ))\par
-\cf7\b while\cf5\b0  \cf1 x\cf5  \cf1 !=\cf5  \cf3 0\cf5 :\par
-    \cf7\b if\cf5\b0  \cf1 x==\cf3 1\cf5 :\par
-        \cf7\b if\cf5\b0  \cf1 seats\cf5  \cf1 <\cf3 10\cf5 :\par
-            \cf7\b for\cf5\b0  \cf1 seat\cf5  \cf7\b in\cf5\b0  \cf4 range\cf5 (\cf1 seats\cf5 ):\par
-                \cf4 print\cf5 (\cf1 seat\cf5 ,\cf1 end=\cf6 ' '\cf5 )\par
-                \cf4 print\cf5 (\cf1 seats\cf5 )\par
-        \cf7\b else\cf5\b0 :\par
-            \cf7\b for\cf5\b0  \cf1 seat\cf5  \cf7\b in\cf5\b0  \cf4 range\cf5 (\cf3 10\cf5 ):\par
-                \cf4 print\cf5 (\cf1 seat\cf5 , \cf1 end=\cf6 ' '\cf5 )\par
-            \cf7\b for\cf5\b0  \cf1 seat\cf5  \cf7\b in\cf5\b0  \cf4 range\cf5 (\cf3 10\cf5 ,\cf1 seats\cf5 ):\par
-                \cf4 print\cf5 (\cf1 seat\cf5 ,\cf1 end=\cf6 ' '\cf5 )\par
-            \cf4 print\cf5 (\cf1 seats\cf5 )\par
-        \cf7\b if\cf5\b0  \cf1 seats<\cf5  \cf3 10\cf5 :\par
-            \cf7\b for\cf5\b0  \cf1 num\cf5  \cf7\b in\cf5\b0  \cf1 table_of_chart\cf5 .\cf1 keys\cf5 ():\par
-                \cf4 print\cf5 (\cf4 int\cf5 (\cf1 num\cf5 )\cf1 +\cf3 1\cf5 , \cf1 end=\cf6 ' '\cf5 )\par
-            \cf7\b for\cf5\b0  \cf1 no\cf5  \cf7\b in\cf5\b0  \cf1 table_of_chart\cf5 [\cf1 num\cf5 ].\cf1 values\cf5 ():\par
-                \cf4 print\cf5 (\cf1 no\cf5 ,\cf1 end=\cf6 ' '\cf5 )\par
-            \cf10 #print()\cf5         \cf7\b else\cf5\b0 :\par
-            \cf1 count_num=\cf3 0\cf5             \cf7\b for\cf5\b0  \cf1 num\cf5  \cf7\b in\cf5\b0  \cf1 table_of_chart\cf5 .\cf1 keys\cf5 ():\par
-                \cf7\b if\cf5\b0  \cf4 int\cf5 (\cf4 list\cf5 (\cf1 table_of_chart\cf5 .\cf1 keys\cf5 ())[\cf1 count_num\cf5 ])\cf1 <\cf5  \cf3 9\cf5 :\par
-                    \cf4 print\cf5 (\cf4 int\cf5 (\cf1 num\cf5 )\cf1 +\cf3 1\cf5 ,\cf1 end=\cf6 ' '\cf5 )\par
-                \cf7\b else\cf5\b0 :\par
-                    \cf4 print\cf5 (\cf4 int\cf5 (\cf1 num\cf5 )\cf1 +\cf3 1\cf5 , \cf1 end=\cf6 ' '\cf5 )\par
-                \cf1 count_key=\cf3 0\cf5                 \cf7\b for\cf5\b0  \cf1 no\cf5  \cf7\b in\cf5\b0  \cf1 table_of_chart\cf5 [\cf1 num\cf5 ].\cf1 values\cf5 ():\par
-                    \cf7\b if\cf5\b0  \cf4 int\cf5 (\cf4 list\cf5 (\cf1 table_of_chart\cf5 [\cf1 num\cf5 ].\cf1 keys\cf5 ())[\cf1 count_key\cf5 ])\cf1 <=\cf5  \cf3 10\cf5 :\par
-                        \cf4 print\cf5 (\cf1 no\cf5 ,\cf1 end=\cf6 ' '\cf5 )\par
-                    \cf7\b else\cf5\b0 :\par
-                        \cf4 print\cf5 (\cf1 no\cf5 ,\cf1 end=\cf6 ' '\cf5 )\par
-                    \cf1 count_key\cf5  \cf1 +=\cf5  \cf3 1\cf5                 \cf1 count_num\cf5   \cf1 +=\cf5  \cf3 1\cf5                 \cf10 #print()\cf5                 \cf4 print\cf5 (\cf6 'vacant_seats:'\cf5 , \cf1 Total_seat\cf5  \cf1 -\cf5  \cf1 Booked_seat\cf5 )\par
-    \cf10 #print()\cf5     \cf7\b elif\cf5\b0  \cf1 x==\cf3 2\cf5 :\par
-        \cf1 Row_number=\cf4 int\cf5 (\cf4 input\cf5 (\cf6 'enter row number(1-10):'\cf5 ))\par
-        \cf1 column_number=\cf4 int\cf5 (\cf4 input\cf5 (\cf6 'enter column number'\cf5 ))\par
-        \cf7\b if\cf5\b0  \cf1 Row\cf5  \cf7\b in\cf5\b0  \cf4 range\cf5 (\cf3 1\cf5 ,\cf1 Row_number\cf5 ) \cf7\b and\cf5\b0  \cf1 column_number\cf5  \cf7\b in\cf5\b0  \cf4 range\cf5 (\cf3 1\cf5 ,\cf1 seats+\cf3 1\cf5 ):\par
-            \cf7\b if\cf5\b0  \cf1 table_of_chart\cf5 [\cf4 str\cf5 (\cf1 Row_number-\cf3 1\cf5 )][\cf4 str\cf5 (\cf1 column_number\cf5 )]\cf1 ==\cf6 '5'\cf5 :\par
-                \cf7\b if\cf5\b0  \cf1 Row*seats\cf5  \cf1 <=\cf5  \cf3 60\cf5 :\par
-                   \cf1 prize_of_ticket=\cf3 20\cf5                 \cf7\b elif\cf5\b0  \cf1 Row_number<=\cf5  \cf4 int\cf5 (\cf1 Row/\cf3 2\cf5 ):\par
-                    \cf1 prize_of_ticket=\cf3 20\cf5                 \cf7\b else\cf5\b0 :\par
-                    \cf1 prize_of_ticket\cf5  \cf1 =\cf5  \cf3 10\cf5                 \cf4 print\cf5 (\cf6 'prize_of_ticket-'\cf5 , \cf6 's'\cf5 ,\cf1 prize_of_ticket\cf5 )\par
-                \cf1 conform_ticket=\cf4 input\cf5 (\cf6 'booking or not booking(yes/no):'\cf5 )\par
-                \cf1 details=\cf5\{\}\par
-                \cf7\b if\cf5\b0  \cf1 conform_ticket==\cf6 "yes"\cf5 :\par
-                    \cf1 details\cf5 [\cf6 "name"\cf5 ]\cf1 =\cf4 input\cf5 (\cf6 "Enter name:"\cf5 )\par
-                    \cf1 details\cf5 [\cf6 "gender"\cf5 ]\cf1 =\cf4 input\cf5 (\cf6 "Enter gender:"\cf5 )\par
-                    \cf1 details\cf5 [\cf6 "age"\cf5 ]\cf1 =\cf4 input\cf5 (\cf6 "enter age:"\cf5 )\par
-                    \cf1 details\cf5 [\cf6 "ph.no"\cf5 ]\cf1 =\cf4 input\cf5 (\cf6 "Enter phone no:"\cf5 )\par
-                    \cf1 details\cf5 [\cf6 "Ticket_prize"\cf5 ]\cf1 =\cf5  \cf1 prize_of_ticket\cf5                     \cf1 table_of_chart\cf5 [\cf4 str\cf5 (\cf1 Row_number-\cf3 1\cf5 )][\cf4 str\cf5 (\cf1 column_number\cf5 )]\cf1 =\cf6 'B'\cf5                     \cf1 Booked_seat\cf5  \cf1 +=\cf3 1\cf5                     \cf1 Total_amount+=\cf5  \cf1 prize_of_ticket\cf5                 \cf7\b else\cf5\b0 :\par
-                   \cf1 Booked_ticket_person\cf5 [\cf1 Row_number-\cf3 1\cf5 ][\cf1 column_number-\cf3 1\cf5 ]\cf1 =details\cf5                    \cf11 print\cf5 (\cf6 "booked successfully"\cf5 )\par
-            \cf7\b else\cf5\b0 :\par
-                \cf4 print\cf5 (\cf6 "this seat is already booked"\cf5 )\par
-    \cf7\b elif\cf5\b0  \cf1 x\cf5  \cf1 ==\cf5  \cf3 3\cf5 :\par
-        \cf4 print\cf5 (\cf6 "number of ticket:"\cf5 ,\cf1 Booked_seat\cf5 )\par
-        \cf4 print\cf5 (\cf6 "percentage:"\cf5 ,\cf1 class_call\cf5 .\cf1 find_percentage\cf5 (\cf1 Booked_seat\cf5 , \cf1 Total_seat\cf5 ))\par
-        \cf4 print\cf5 (\cf6 "current amount:"\cf5 ,\cf6 "$"\cf5 ,\cf1 prize_of_ticket\cf5 )\par
-        \cf4 print\cf5 (\cf6 "total amount:"\cf5 ,\cf6 "$"\cf5 ,\cf1 Total_amount\cf5 )\par
-        \cf10 #print()\cf5     \cf7\b elif\cf5\b0  \cf1 x\cf5  \cf1 ==\cf5  \cf3 4\cf5 :\par
-        \cf1 Enter_row=\cf4 int\cf5 (\cf4 input\cf5 (\cf6 "Enter row number:"\cf5 ))\par
-        \cf1 Enter_column=\cf4 int\cf5 (\cf4 input\cf5 (\cf6 "Enter column number:"\cf5 ))\par
-        \cf7\b if\cf5\b0  \cf1 Enter_row\cf5  \cf7\b in\cf5\b0  \cf4 range\cf5 (\cf3 1\cf5 ,\cf1 Row+\cf3 1\cf5 ) \cf7\b and\cf5\b0  \cf1 Enter_column\cf5  \cf7\b in\cf5\b0  \cf4 range\cf5 (\cf3 1\cf5 ,\cf1 seats+\cf3 1\cf5 ):\par
-            \cf7\b if\cf5\b0  \cf1 table_of_chart\cf5 [\cf4 str\cf5 (\cf1 Enter_row-\cf3 1\cf5 )][\cf4 str\cf5 (\cf1 Enter_row\cf5 )]\cf1 ==\cf5  \cf6 'B'\cf5 :\par
-                \cf1 person=Booked_ticket_person\cf5 [\cf1 Enter_row-\cf3 1\cf5 ][\cf1 Enter_column-\cf3 1\cf5 ]\par
-                \cf4 print\cf5 (\cf6 "Name:"\cf5 ,\cf1 person\cf5 [\cf6 'name'\cf5 ])\par
-                \cf4 print\cf5 (\cf6 "gender:"\cf5 ,\cf1 person\cf5 [\cf6 "gender"\cf5 ])\par
-                \cf4 print\cf5 (\cf6 "age:"\cf5 ,\cf1 person\cf5 [\cf6 "age"\cf5 ])\par
-                \cf4 print\cf5 (\cf6 "phone no:"\cf5 ,\cf1 person\cf5 (\cf6 "ph no"\cf5 ))\par
-                \cf4 print\cf5 (\cf6 "Ticket prize:"\cf5 ,\cf6 '$'\cf5 ,\cf1 person\cf5 [\cf6 "ticket_prize"\cf5 ])\par
-            \cf7\b else\cf5\b0 :\par
-                \cf4 print\cf5 ()\par
-                \cf4 print\cf5 (\cf6 "### available seat ###"\cf5 )\par
-        \cf7\b else\cf5\b0 :\par
-            \cf4 print\cf5 ()\par
-            \cf4 print\cf5 (\cf6 " input error"\cf5 )\par
-            \cf4 print\cf5 ()\par
-    \cf7\b else\cf5\b0 :\par
-        \cf4 print\cf5 ()\par
-        \cf4 print\cf5 (\cf6 " input error  "\cf5 )\par
+x=10
+Booked_seat= 0
+prize_of_ticket= 0
+Total_amount=0
+print("WELCOME TO AGS CINEMA")
+movie_name=input("please enter the movie name (ps1/VAADIVASAL):")
+date=input("enter your booking date (dd/mm/yyyy):")
+if movie_name=="ps1" and date== "27/09/2022":
+print("your ticket is booked" )
+elif movie_name=="ps1" and date=="28/09/2022":
+print("your ticket not booked")
+elif movie_name=="VAADIVASAL" date== "20/09/2022":
+   print ( "your ticket will be ready" )
+elif  movie_name== "VAADIVASAL"  date=="21/09/2022" :
+    print ( "your ticket is waiting list")
+ else:
+    print(sorry your ticket not booked" )
+ Row= int(input("Enter row number:"))
+ seats= int(input("Enter number of seats in a Row" ))
+Total_seat=100
+Booked_ticket_person= [str(Row)+str(j)for j in range(seats)]
+ print ( 'Tickets: ' ,Booked_ticket_person )
+ Booked_seat =len ( Booked_ticket_person )
+classchart:
+ @staticmethod    
+ defchart_maker (Row= 0,  seats=1):
+        seats_chart={}
+         for in range (Row):
+             seats_in_row={}
+            for j  in range ( seats):
+                seats_in_row [ str( j+1)]='S'            
+                seats_chart [ str(i)] =seats_in_row         
+                returnseats_chart
+ @staticmethod    
+ deffind_percentage ( Booked_seat= 0 ,Total_seat=100):
+       percentage=( Booked_seat/Total_seat )*100
+returnpercentageclass_call=charttable_of_chart = class_call. chart_maker()
 
-\pard\sa160\sl259\slmult0         \cf4 print\cf5 ()\cf0\highlight0\f1\fs22\par
-}
- 
+ x= int ( input( 'select option:' ))
+ while x!=0 
+   if x==1:
+        if seats<10:
+             for seat in range(seats):
+               print(seat ,end= ' ' )
+                print (seats)
+       else:
+             for  seat in range (10):
+                 print ( seat ,end= ' ' )
+            for seat in range (10 ,seats ):
+               print( seat , end= ' ' )
+          print (seats)
+        if seats<10 :
+            for num in table_of_chart .keys():
+                print(int( num)+1,end= ' ' )
+            for no in table_of_chart [ num].values ():
+               print( no,end= ' ')
+            #print() else:
+           count_num= 0             
+           for num in table_of_chart.keys():
+                if int(list ( table_of_chart .keys())[ count_num ])<9:
+                  print(int ( num) +1 , end=' ' )
+           else:
+                print(no,end='')
+               count_key=+1 
+               count_num+=1
+               print('vacant_seats',Total_seat-Booked_seat) 
+                        \
+          elif  x== 2 :
+            Row_number= int ( input ('enter row number(1-10):' ))
+            column_number= int( input ( 'enter column number'))
+             if Row inrange ( 1 , Row_number )and column_number in range(1 seats+ 1 ):
+            if  table_of_chart [str ( Row_number- 1)][str (column_number)]== '5' :
+                if Row*seats<= 60:
+                  prize_of_ticket=20             
+                  elif Row_number<= int ( Row/2):
+                   prize_of_ticket=20              
+                   else:
+                       prize_of_ticket = 10             
+                       print('prize_of_ticket-' ,  's' , prize_of_ticket)
+              conform_ticket=input( 'booking or not booking(yes/no):')
+               details={}
+                     if conform_ticket== "yes" :
+                     details [ "name"]= input( "Enter name:" )
+                     details[ "gender"] =input ( "Enter gender:")
+                     details[ "age" ] = input ( "enter age:" )
+                     details[ "ph.no"] =input( "Enter phone no:")
+                     details [ "Ticket_prize"]=prize_of_ticket                     
+                     table_of_char[str (Row_number- 1)][str(column_number)]='B'                    
+                    Booked_seat += 1                     
+                    Total_amount+= prize_of_ticket              
+                    else;
+                   Booked_ticket_person[Row_number- 1][column_number-1] = details                  
+                      print( "booked successfully")
+             else:
+                print ("this seat is already booked")
+     elif x==3:
+       print("number of ticket:" ,Booked_seat)
+        print( "percentage:" ,class_call.find_percentage(Booked_seat ,Total_seat ))
+       print( "current amount:" ,"$" , prize_of_ticket)
+       print( "total amount:", "$" , Total_amount)
+         #print()
+      elif x ==4
+       Enter_row=int( input( "Enter row number:"))
+       Enter_column=int(input("Enter column number:"))
+        if Enter_row  in range(1,Row+1) and Enter_column in range (1,seats+1):
+            if table_of_chart [ str( Enter_row-1 )][str( Enter_row)] =='B':
+                 person=Booked_ticket_person[Enter_row- 1][Enter_column- 1]
+                  print("Name:" , person['name'])
+                  print( "gender:",person["gender"])
+                  print( "age:",person["age"])
+                  print ( "phone no:" ,person( "ph no"))
+                  print( "Ticketprize:",'$',person["ticket_orize"])
+              else:
+                 print()
+                 print( "### available seat ###")
+        else:
+            print()
+            print("input error")
+            print()
+    else :
+       print()
+       print(" input error")
+       print ()
